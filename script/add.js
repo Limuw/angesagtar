@@ -59,7 +59,7 @@ confirmButton.addEventListener("click", async () => {
       );
       const result = await response.json();
       console.log(result);
-      
+      location.href = './user';
     } else {
       // create
       let dots = "";
@@ -75,6 +75,9 @@ confirmButton.addEventListener("click", async () => {
           .join("")}`
       );
       const result = await response.json();
+      await fetch(
+        `https://angesagter.herokuapp.com/?create=descr&login=${currentUser}&name=${nameInput.value}`
+      );
       console.log(result);
     }
   } else {
@@ -111,8 +114,5 @@ window.onload = async () => {
     render(road);
   } else {
     textPlace.textContent = `Создание дороги`;
-
-    // alert("Пожалуйста, выберите дорогу для редактирования!");
-    // window.location.href = "./user.html";
   }
 };

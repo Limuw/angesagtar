@@ -6,6 +6,7 @@ h3 {
   align-items: center;
   justify-content: center;
   column-gap: 10vh;
+  position: relative;
 }
 canvas {
   background-color: #ffffffdd;
@@ -21,6 +22,7 @@ canvas {
   background-color: #80008070;
   position: relative;
   padding: 35px 0 15px;
+  overflow-y: auto;
 }
 h4 {
   position: absolute;
@@ -33,8 +35,6 @@ h4 {
   font-size: 2vh;
 }
 .roads-list {
-  overflow-y: auto;
-  overflow-x: hidden;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -67,4 +67,36 @@ h4 {
 }
 .selected{
   border: 3px solid #ffffff!important;
+}
+.road-info{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  transform: translateX(-150%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: #ae33ae;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #fff;
+  text-align: center;
+  transition: all .3s;
+}
+textarea{
+  height: 80%;
+  width: 90%;
+  padding: 5px;
+}
+h5{
+  padding: 10px;
+  font-size: 2vh;
+}
+.road-length{
+  font-size: 1.75vh;
 }
